@@ -1,21 +1,122 @@
-.jumbotron{
-	color: #aaa;
-	background: #381066;
+/*change text color animation
+
+/*@keyframes example {
+    0%   {color:red; left:0px; top:0px;}
+    25%  {color:yellow; left:200px; top:0px;}
+    50%  {color:blue; left:200px; top:200px;}
+    75%  {color:green; left:0px; top:200px;}
+    100% {color:red; left:0px; top:0px;}
+}
+
+h1 {
+    width: 100px;
+    height: 100px;
+    animation-name: example;
+    animation-duration: 370s;
+    animation-iteration-count: infinite;
+}*/
+
+/* slide in animation
+
+/*p {
+  animation-duration: 2s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%; 
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+
+  60% {
+  font-size: 200%;
+  margin-left: 25%;
+  width: 150%;
+}
+
+}*/
+
+
+
+
+
+body {
+	
+}
+
+.container {
+	background: white; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(white, yellow); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(white, yellow); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(white, yellow); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(white, yellow);
+	
+
+}
+
+h1 {
+	-webkit-font-smoothing: antialiased;
+	font-size: 60px;
 	text-align: center;
-	font-size: 27px;
+	margin-top: 0px;
+	width: 100%;
+	padding: 15px;
+}
+
+#heading {
+	width: 100%;
+	background-color: #111;
+	color: white;
+	height: 100px;
+	
+}
+
+#intro {
+	-webkit-font-smoothing: antialiased;
+	padding: 15px;
+	margin-top: 15px;
+	color: black;
+	display: inline-block;
+	width: 100%;
+
 }
 
 #map {
+	border: 1px solid black;
+	margin-top: 15px;
 	display: inline-block;
-	right: 0;
-	height: 1000px;
-	width: 80%;
+	height: 580px;
+	width: 100%;
+	
 }
 
-#beerList{
+#topTenBeer{
+
+	padding: 15px;
+	margin-top: 15px;
+	color: white;
+	background-color: #111;
 	display: inline-block;
-	height: 1000px;
-	width: 17%;
-	background: #999;
+	width: 100%;
+}
+
+#topTenBreweries{
+	padding: 15px;
+	margin-top: 15px;
+	color: white;
+	background-color: #111;
+	display: inline-block;
+	width: 100%;
+
+}
+
+h2 {
+	margin-top: 0px;
 }
 
