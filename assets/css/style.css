@@ -44,6 +44,175 @@ h1 {
 
 
 
+#beer-display{
+  margin-top: 15px;
+  color: white;
+  background: black;
+  height: 230px;
+  width: 294px;
+}
+
+#display-title {
+	text-align: center;
+}
+
+.glass1 {
+	width: 2px;
+  	height: 100px;
+  	position: absolute;
+  	right: 82px;
+  	top: 30px;
+  	border-radius: 5px;
+  	border:2px solid #fff;
+}
+
+.glass2 {
+	width: 2px;
+  	height: 100px;
+  	position: absolute;
+  	right: 48px;
+  	top: 30px;
+  	border-radius: 5px;
+  	border:2px solid #fff;
+}
+
+.glass3 {
+	width: 2px;
+  	height: 100px;
+  	position: absolute;
+  	right: 15px;
+  	top: 30px;
+  	border-radius: 5px;
+  	border:2px solid #fff;
+}
+
+.cup{
+
+	opacity: .6;
+	left: 93px;
+  	width: 120px;
+  	height: 162px;
+  	position: absolute;
+  	background: white;
+  	border-radius: 0 0 20px 20px;
+}
+
+.ear{
+  width: 40px;
+  height: 100px;
+  position: absolute;
+  right: -37px;
+  top: 30px;
+  border-radius: 25px;
+  border:15px solid #fff;
+ 
+}
+
+.beer{
+  width: 100px;
+  height: 150px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background: #FFC408;
+  border-radius: 0 0 20px 20px;
+}
+
+.bubble{
+	border: 1px solid #ffffe6;
+  	background: white;
+  	opacity: .98;
+}
+
+.bubble_top{
+  width: 109px;
+  height: 22px;
+  position: absolute;
+  top: 0px;
+  right: -4px;
+}
+
+.bubble_circle{  
+  position: absolute;
+  border-radius: 50%;
+}
+
+#big1{
+  width: 40px;
+  height: 40px;
+  top: -25px;
+}
+
+#big2{
+  width: 50px;
+  height: 50px;
+  left: 30px;
+  top: -40px;
+}
+
+#big3{
+  width: 20px;
+  height: 20px;
+  left: 20px;
+  top: -40px;
+}
+
+#big4{
+  width: 40px;
+  height: 40px;
+  right: 0;
+  top: -20px;
+}
+
+#small1{
+  width: 10px;
+  height: 10px;
+  bottom: 30px;
+  left: 10px;
+  animation: bobo 2s infinite;
+}
+
+#small2{
+  width: 15px;
+  height: 15px;
+  bottom: 80px;
+  left: 70px;
+  animation: bobo 1s .4s infinite;
+}
+
+#small3{
+  width: 10px;
+  height: 10px;
+  bottom: 130px;
+  left: 20px;
+  animation: bobo 1s .6s infinite;
+}
+
+#small4{
+  width: 25px;
+  height: 25px;
+  bottom: 120px;
+  left: 40px;
+  animation: bobo 2s .9s infinite;
+}
+
+@keyframes bobo{
+  from{
+    bottom: 5px;
+    opacity: 0;
+    width: 5px;
+    height: 5px;
+  }
+  
+  to{
+    bottom: 130px;
+    opacity: .9;
+    width: 20px;
+    height: 20px;
+  }
+}
+
 
 
 body {
@@ -78,12 +247,14 @@ h1 {
 }
 
 #intro {
+	background-color: black;
 	-webkit-font-smoothing: antialiased;
 	padding: 15px;
 	margin-top: 15px;
-	color: black;
+	color: white;
 	display: inline-block;
 	width: 100%;
+	height: 150px;
 
 }
 
