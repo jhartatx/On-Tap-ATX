@@ -45,11 +45,11 @@ h1 {
 
 
 #beer-display{
-  margin-top: 15px;
+  margin-top: 30px;
   color: white;
   background: rgba(0, 0, 0, 0.7);
   height: 230px;
-  width: 294px;
+  width: 100%;
 }
 
 #display-title {
@@ -57,8 +57,8 @@ h1 {
 }
 
 .glass1 {
-	width: 2px;
-  	height: 100px;
+	  width: 2px;
+    height: 100px;
   	position: absolute;
   	right: 82px;
   	top: 30px;
@@ -213,46 +213,74 @@ h1 {
   }
 }
 
-
+#austin {
+  width: 100%;
+  
+}
 
 body {
-	background: #222;
+	
+
 	
 }
 
 .container {
-	background: url("https://get.taphunter.com/wp-content/uploads/2016/04/tap.jpg") no-repeat fixed center;
+	
 
 }
 
-h1 {
+#tap-display {
+  margin-top: 15px;
+  z-index: -1;
+  position: relative;
+  margin-left: 30%;
 	
-	color: white;
+}
+
+#tap {
+  margin-right: 30px;
+  width: 100%;
+  z-index: -1;
+  
+}
+
+
+h1 {
+	color: black;
 	-webkit-font-smoothing: antialiased;
-	font-size: 85px;
+	font-size: 50px;
 	font-family: 'Playfair Display', serif;
-	text-align: center;
 	margin-top: 0px;
 	width: 100%;
 }
 
 #heading {
-	background: rgba(0, 0, 0, 0.7);
 	width: 100%;
-	height: 130px;
+	height: 150px;
 	padding: 10px;
 	
 }
 
+.sub-text {
+  margin-left: 18px;
+	margin-top: -11px;
+	font-size: 18px;
+	font-family: 'Rock Salt', cursive;
+	color: #DE0808;
+}
+
 #intro {
-	background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  float: left;
+  z-index: 2;
+	background: rgb(236, 137, 8);
 	-webkit-font-smoothing: antialiased;
-	padding: 15px;
-	margin-top: 15px;
-	color: white;
-	display: inline-block;
-	width: 100%;
-	height: 150px;
+	padding: 30px;
+	margin-top: 60px;
+  height: 300px;
+	color: black;
+  width: 40%;
+	
 
 }
 
@@ -266,10 +294,10 @@ h1 {
 }
 
 #topTenBeer{
-	background: rgba(0, 0, 0, 0.7);
+	/*background: rgba(0, 0, 0, 0.7);*/
 	padding: 15px;
 	margin-top: 15px;
-	color: white;
+	color: black;
 	display: inline-block;
 	width: 100%;
 }
@@ -277,8 +305,8 @@ h1 {
 #topTenBreweries{
 	padding: 15px;
 	margin-top: 15px;
-	color: white;
-	background: rgba(0, 0, 0, 0.7);
+	color: black;
+	/*background: rgba(0, 0, 0, 0.7);*/
 	display: inline-block;
 	width: 100%;
 
@@ -287,4 +315,6 @@ h1 {
 h2 {
 	margin-top: 0px;
 }
+
+
 
