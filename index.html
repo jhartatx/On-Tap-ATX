@@ -10,8 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script type="text/javascript" src="assets/javascript/app.js"></script>
+
 	<link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
 </head>
 
@@ -66,48 +65,69 @@
 
 		<div class="row">
 			<div class="col-md-4">
-				<div id="topTen">
-					<div id="topTenBeer">
-					<h2>Top 10 Beers</h2>
-					<ol>
-						<li>Example 1</li>
-						<li>Example 2</li>
-						<li>Example 3</li>
-						<li>Example 4</li>
-						<li>Example 5</li>
-						<li>Example 6</li>
-						<li>Example 7</li>
-						<li>Example 8</li>
-						<li>Example 9</li>
-						<li>Example 10</li>
-					</ol>
-					</div>
-					<div id="topTenBreweries">
-					<h2>Top 10 Breweries</h2>
-					<ol>
-						<li>Example 1</li>
-						<li>Example 2</li>
-						<li>Example 3</li>
-						<li>Example 4</li>
-						<li>Example 5</li>
-						<li>Example 6</li>
-						<li>Example 7</li>
-						<li>Example 8</li>
-						<li>Example 9</li>
-						<li>Example 10</li>
-					</ol>
+				<div id="sideTab" class="container-fluid">	
+					<ul  class="nav nav-pills">
+						<li class="active">
+				        	<a  href="#beers" data-toggle="tab">Top Beers</a>
+						</li>
+						<li>
+							<a href="#brews" data-toggle="tab">Top Breweries</a>
+						</li>
+					</ul>
+
+					<div class="tab-content clearfix">
+					  	<div class="tab-pane active" id="beers">
+				          	<div id="topTenBeer">
+								<h2>Top 10 Beers</h2>
+								<ol>
+									<li>Atrial Rubicite - Jester King Brewery</li>
+									<li>Montmorency Vs Balaton - Jester King Brewery</li>
+									<li>Aurelian Lure - Jester King Brewery</li>
+									<li>Bière De Blanc Du Bois - Jester King Brewery</li>
+									<li>Live Oak HefeWeizen - Live Oak Brewing Company</li>
+									<li>Omniscience &amp; Proselytism - Jester King Brewery</li>
+									<li>分 桃 (Fēn Táo) - Jester King Brewery</li>
+									<li>Nocturn Chrysalis - Jester King Brewery</li>
+									<li>Foudreweizen - Jester King Brewery</li>
+									<li>Cerveza De Tempranillo - Jester King Brewery</li>
+								</ol>
+							</div>
+						</div>
+
+						<div class="tab-pane" id="brews">
+				         	<div id="topTenBreweries">
+								<h2>Top 10 Breweries</h2>
+								<ol>
+									<li>Example 1</li>
+									<li>Example 2</li>
+									<li>Example 3</li>
+									<li>Example 4</li>
+									<li>Example 5</li>
+									<li>Example 6</li>
+									<li>Example 7</li>
+									<li>Example 8</li>
+									<li>Example 9</li>
+									<li>Example 10</li>
+								</ol>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-8">
-	    		<div id="map">
-	    		<script async defer
-	    		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzWG24urca-Ze4g4x4MlKCQBqF_kaHrQ0&libraries=places&callback=initMap">
-	    		</script>
-	    		</div>
+				<input id="pac-input" class="controls" type="text" placeholder="Search Box">
+	    		<div id="map"></div>
 	    	</div>
 		</div>	
-	</div>    
-</body>
+	</div>  
 
+	<div class="row">
+
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzWG24urca-Ze4g4x4MlKCQBqF_kaHrQ0&libraries=places&callback=initMap"></script>
+	<script type="text/javascript" src="assets/javascript/app.js"></script>  
+</body>
 </html>

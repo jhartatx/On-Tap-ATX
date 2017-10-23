@@ -45,11 +45,11 @@ h1 {
 
 
 #beer-display{
-  margin-top: 15px;
-  color: white;
-  background: rgba(0, 0, 0, 0.7);
-  height: 230px;
-  width: 294px;
+	margin-top: 15px;
+	color: white;
+	background: rgba(0, 0, 0, 0.7);
+	height: 230px;
+	width: 294px;
 }
 
 #display-title {
@@ -98,25 +98,25 @@ h1 {
 }
 
 .ear{
-  width: 40px;
-  height: 100px;
-  position: absolute;
-  right: -37px;
-  top: 30px;
-  border-radius: 25px;
-  border:15px solid #fff;
+	width: 40px;
+	height: 100px;
+	position: absolute;
+	right: -37px;
+	top: 30px;
+	border-radius: 25px;
+	border:15px solid #fff;
  
 }
 
 .beer{
-  width: 100px;
-  height: 150px;
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: auto;
-  background: #FFC408;
-  border-radius: 0 0 20px 20px;
+	width: 100px;
+	height: 150px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto;
+	background: #FFC408;
+	border-radius: 0 0 20px 20px;
 }
 
 .bubble{
@@ -126,75 +126,75 @@ h1 {
 }
 
 .bubble_top{
-  width: 109px;
-  height: 22px;
-  position: absolute;
-  top: 0px;
-  right: -4px;
+	width: 109px;
+	height: 22px;
+	position: absolute;
+	top: 0px;
+	right: -4px;
 }
 
 .bubble_circle{  
-  position: absolute;
-  border-radius: 50%;
+	position: absolute;
+	border-radius: 50%;
 }
 
 #big1{
-  width: 40px;
-  height: 40px;
-  top: -25px;
+	width: 40px;
+	height: 40px;
+	top: -25px;
 }
 
 #big2{
-  width: 50px;
-  height: 50px;
-  left: 30px;
-  top: -40px;
+	width: 50px;
+	height: 50px;
+	left: 30px;
+	top: -40px;
 }
 
 #big3{
-  width: 20px;
-  height: 20px;
-  left: 20px;
-  top: -40px;
+	width: 20px;
+	height: 20px;
+	left: 20px;
+	top: -40px;
 }
 
 #big4{
-  width: 40px;
-  height: 40px;
-  right: 0;
-  top: -20px;
+	width: 40px;
+	height: 40px;
+	right: 0;
+	top: -20px;
 }
 
 #small1{
-  width: 10px;
-  height: 10px;
-  bottom: 30px;
-  left: 10px;
-  animation: bobo 2s infinite;
+	width: 10px;
+	height: 10px;
+	bottom: 30px;
+	left: 10px;
+	animation: bobo 2s infinite;
 }
 
 #small2{
-  width: 15px;
-  height: 15px;
-  bottom: 80px;
-  left: 70px;
-  animation: bobo 1s .4s infinite;
+	width: 15px;
+	height: 15px;
+	bottom: 80px;
+	left: 70px;
+	animation: bobo 1s .4s infinite;
 }
 
 #small3{
-  width: 10px;
-  height: 10px;
-  bottom: 130px;
-  left: 20px;
-  animation: bobo 1s .6s infinite;
+	width: 10px;
+	height: 10px;
+	bottom: 130px;
+	left: 20px;
+	animation: bobo 1s .6s infinite;
 }
 
 #small4{
-  width: 25px;
-  height: 25px;
-  bottom: 120px;
-  left: 40px;
-  animation: bobo 2s .9s infinite;
+	width: 25px;
+	height: 25px;
+	bottom: 120px;
+	left: 40px;
+	animation: bobo 2s .9s infinite;
 }
 
 @keyframes bobo{
@@ -213,20 +213,49 @@ h1 {
   }
 }
 
+#sideTab{
+	margin-top: 20px;
+}
 
+#sideTab .tab-pane{
+	height: 524px;
+}
+
+#sideTab .nav-pills > li > a {
+    border-radius: 4px 4px 0 0 ;
+}
+
+#sideTab .tab-content {
+    color : white;
+    background-color: #428bca;
+    padding : 5px 15px;
+}
+
+#pac-input {
+	background-color: #fff;
+	font-family: Roboto;
+	font-size: 15px;
+	font-weight: 300;
+	margin-left: 12px;
+	padding: 0 11px 0 13px;
+	text-overflow: ellipsis;
+	width: 400px;
+}
+
+#pac-input:focus {
+	border-color: #4d90fe;
+}
 
 body {
 	background: #222;
-	
 }
 
 .container {
 	background: url("https://get.taphunter.com/wp-content/uploads/2016/04/tap.jpg") no-repeat fixed center;
-
+	width: 94%;
 }
 
-h1 {
-	
+h1 {	
 	color: white;
 	-webkit-font-smoothing: antialiased;
 	font-size: 85px;
