@@ -7,6 +7,9 @@ function initMap() {
 	  zoom: 12,
 	  center: austin
 	});
+	var input = document.getElementById('pac-input');
+    var searchBox = new google.maps.places.SearchBox(input);
+    map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 	google.maps.event.addListener(map, 'zoom_changed', function() {
 	   if (this.getZoom() < 12 ) {
             // Change max/min zoom here
@@ -14,14 +17,31 @@ function initMap() {
         }
 	});
 
+	var markers = [];
+
 	infowindow = new google.maps.InfoWindow();
 	var service = new google.maps.places.PlacesService(map);
 
-	service.nearbySearch({
+	var request = {
 	    location: austin,
-	    radius: '5000',
+	    radius: '10000',
 	    types: ['bar', 'restaurant', 'night_club']
-	}, callback);
+	};
+
+	
+	searchBox.addListener('places_changed', function() {
+		var places = searchBox.getPlaces();
+
+		request.keyword = places;
+
+		service.nearbySearch(request, callback);
+
+		if (places.length == 0) {
+			return;
+		}
+	});
+
+	service.nearbySearch(request, callback);
 }
 
 function callback(results, status) {
