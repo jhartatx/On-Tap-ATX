@@ -336,11 +336,17 @@ h1 {
   z-index: 2;
 	background: rgb(236, 137, 8);
 	-webkit-font-smoothing: antialiased;
+  font-family: 'Playfair Display', serif;
 	padding: 30px;
 	margin-top: 60px;
   height: 300px;
 	color: white;
   width: 40%;
+}
+
+p {
+  font-size: 18px;
+  margin-top: 25px;
 }
 
 #map {
@@ -375,14 +381,14 @@ h1 {
 h2 {
 	margin-top: 0px;
   font-weight: bold;
-  font-family: 'Poiret One', cursive;
+  font-family: 'Playfair Display', serif;
 
 }
 
 #topTen {
   font-size: 35px;
   font-weight: bold;
-  font-family: 'Poiret One', cursive;
+  font-family: 'Playfair Display', serif;
   -webkit-font-smoothing: antialiased;
   color: black;
   text-decoration: underline;
