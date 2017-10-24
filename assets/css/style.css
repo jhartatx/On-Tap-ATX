@@ -358,6 +358,12 @@ p {
 	
 }
 
+#infoMain{
+	height: 400px;
+	background: #aaa;
+	margin-top: 10px;
+}
+
 #topTenBeer{
 	padding: 15px;
 	margin-top: 15px;

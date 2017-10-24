@@ -18,18 +18,12 @@
 <body>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-9">
+			<div class="col-md-12">
 				<header id="heading">
 					<h1>On-Tap ATX</h1>
 					<h2 class="sub-text">Austin's Drinking Guide</h2>
 				</header>
-			</div>
-			<div class="col-md-3">
-				<header id="viewers">
-					<h4 id="connected-viewers"></h4>
-					<h4 id="total-viewers"></h4>
-				</header>
-			</div>
+			</div>	
 		</div>
 		<div class="row">
 			<div class="col-md-12">
@@ -43,20 +37,27 @@
 				</div>
 			</div>	
 		</div>
+
 		<div class="row">
 			<div class="col-md-12">
 				<img id="austin" src="assets/images/austin.png" alt="austin skyline">
 			</div>
 		</div>
-
+		
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-md-9">
 				<div id="weather-display">
 					<h2>Current Weather in Austin, TX: </h2>
 					<div class="temp"></div>
 					<div class="humidity"></div>
 					<div class="wind"></div>
 				</div>
+			</div>
+			<div class="col-md-3">
+				<header id="viewers">
+					<h4 id="connected-viewers"></h4>
+					<h4 id="total-viewers"></h4>
+				</header>
 			</div>
 		</div>
 
@@ -97,10 +98,13 @@
 				<div id="sideTab" class="container-fluid">	
 					<ul  class="nav nav-pills">
 						<li class="active">
-				        	<a  href="#beers" data-toggle="tab">Top Beers</a>
+				        	<a  href="#beers" data-toggle="tab" id="beerTab">Top Beers</a>
 						</li>
 						<li>
-							<a href="#brews" data-toggle="tab">Top Breweries</a>
+							<a href="#brews" data-toggle="tab" id="brewTab">Top Breweries</a>
+						</li>
+						<li>
+							<a href="#all" data-toggle="tab" id="allTab">All Breweries</a>
 						</li>
 					</ul>
 
@@ -127,16 +131,16 @@
 				         	<div id="topTenBreweries">
 								<h2 id="topTen">Top 10 Breweries</h2>
 								<ol>
-									<li>Example 1</li>
-									<li>Example 2</li>
-									<li>Example 3</li>
-									<li>Example 4</li>
-									<li>Example 5</li>
-									<li>Example 6</li>
-									<li>Example 7</li>
-									<li>Example 8</li>
-									<li>Example 9</li>
-									<li>Example 10</li>
+									<li class="breweryLi">Live Oak</li>
+									<li class="breweryLi">Real Ale</li>
+									<li class="breweryLi">Austin Beerworks</li>
+									<li class="breweryLi">Jester King</li>
+									<li class="breweryLi">Blue Owl</li>
+									<li class="breweryLi">St Elmo</li>
+									<li class="breweryLi">Independence Brewing Co</li>
+									<li class="breweryLi">Hops &amp; Grain</li>
+									<li class="breweryLi">Friends and Allies Brewing</li>
+									<li class="breweryLi">512 brewing co</li>
 								</ol>
 							</div>
 						</div>
@@ -144,15 +148,22 @@
 				</div>
 			</div>
 			<div class="col-md-8">
-				<input id="pac-input" class="controls" type="text" placeholder="Search Box">
 	    		<div id="map"></div>
 	    	</div>
 		</div>	
-	</div>  
+		<div class="row">
+			<div class="col-md-12">
+				<div class="panel" id="infoMain">
+					<div class="panel-heading" id="infoTitle"></div>
+					<div class="panel-body" id="infoBody"></div>
+				</div>
+			</div>
+		</div>
 
-	<div class="row">
-
+		
 	</div>
+
+
 
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
