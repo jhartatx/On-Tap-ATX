@@ -5,13 +5,12 @@
 <head>
 	<meta charset="UTF-8">
 
-	<title>On Tap ATX</title>
+	<title>On-Tap ATX</title>
 
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
-	<link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display|Poiret+One|Rock+Salt" rel="stylesheet">
 
 </head>
 
@@ -29,24 +28,20 @@
 			<div class="col-md-12">
 				<div id="intro">
 					<h2>Your Guide to Austin's Best Breweries and Pints!</h2>
-					<p>Here is an example of an intro which we can provide our "pitch". We can take the guess work
-						out of where and what to drink in Austin.</p>	
+					<p>Whether you are looking for a quick cold-one or a night out with your friends, we have a
+					complete guide of the best places and beers in Austin! </p>	
 				</div> 
 				<div id="tap-display">
 					<img id="tap" src="assets/images/taps.jpg" alt="beer taps">
 				</div>
 			</div>	
 		</div>
-		<div class="row">
-			<div class="col-md-12">
-				<img id="austin" src="assets/images/austin.png" alt="austin skyline">
-			</div>
-		</div>
+		
 
 		<div class="row">
 			<div class="col-md-12">
 				<div id="beer-display">
-					<h2 id="display-title">Welcome!</h2>
+					<h2 id="display-title">Beer Facts: </h2>
 
 					<div class="cup">
   						<div class="ear"></div>
@@ -69,6 +64,8 @@
     								<div class="bubble bubble_circle" id="small4"></div>
   							</div>
 					</div>
+					<div id="factsDisplay">
+					</div>
 				</div>
 			</div>
 		</div>
@@ -83,28 +80,33 @@
 						<li>
 							<a href="#brews" data-toggle="tab" id="brewTab">Top Breweries</a>
 						</li>
+						<li>
+							<a href="#all" data-toggle="tab" id="allTab">All Breweries</a>
+						</li>
 					</ul>
 
 					<div class="tab-content clearfix">
 					  	<div class="tab-pane active" id="beers">
 				          	<div id="topTenBeer">
-								<h2>Top 10 Beers</h2>
+								<h2 id="topTen">Top 10 Beers</h2>
 								<ol>
-									<li>Atrial Rubicite - Jester King Brewery</li>
-									<li>Montmorency Vs Balaton - Jester King Brewery</li>
-									<li>Live Oak HefeWeizen - Live Oak Brewing Company</li>
-									<li>Omniscience &amp; Proselytism - Jester King Brewery</li>
-									<li>分 桃 (Fēn Táo) - Jester King Brewery</li>
-									<li>Nocturn Chrysalis - Jester King Brewery</li>
-									<li>Foudreweizen - Jester King Brewery</li>
-									<li>Cerveza De Tempranillo - Jester King Brewery</li>
+									<li>1. Atrial Rubicite - Jester King Brewery</li>
+									<li>2. Montmorency Vs Balaton - Jester King Brewery</li>
+									<li>3. Aurelian Lure - Jester King Brewery</li>
+									<li>4. Bière De Blanc Du Bois - Jester King Brewery</li>
+									<li>5. Live Oak HefeWeizen - Live Oak Brewing Company</li>
+									<li>6. Omniscience &amp; Proselytism - Jester King Brewery</li>
+									<li>7. 分 桃 (Fēn Táo) - Jester King Brewery</li>
+									<li>8. Nocturn Chrysalis - Jester King Brewery</li>
+									<li>9. Foudreweizen - Jester King Brewery</li>
+									<li>10. Cerveza De Tempranillo - Jester King Brewery</li>
 								</ol>
 							</div>
 						</div>
 
 						<div class="tab-pane" id="brews">
 				         	<div id="topTenBreweries">
-								<h2>Top 10 Breweries</h2>
+								<h2 id="topTen">Top 10 Breweries</h2>
 								<ol>
 									<li class="breweryLi">Live Oak</li>
 									<li class="breweryLi">Real Ale</li>
@@ -126,11 +128,23 @@
 	    		<div id="map"></div>
 	    	</div>
 		</div>	
-	</div>  
+		<div class="row">
+			<div class="col-md-12">
+				<div class="panel" id="infoMain">
+					<div class="panel-heading" id="infoTitle"></div>
+					<div class="panel-body" id="infoBody"></div>
+				</div>
+			</div>
+		</div>
 
-	<div class="row">
-
+		<div class="row">
+			<div class="col-md-12">
+				<img id="austin" src="assets/images/austin.png" alt="austin skyline">
+			</div>
+		</div>
 	</div>
+
+
 
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>

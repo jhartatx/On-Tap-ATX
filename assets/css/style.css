@@ -42,18 +42,30 @@ h1 {
 
 }*/
 
-
-
-#beer-display{
-  margin-top: 30px;
+#factsDisplay {
   color: white;
-  background: rgba(0, 0, 0, 0.7);
-  height: 230px;
-  width: 100%;
+  margin-top: 3%;
+  margin-left: 25%;
+  font-family: 'Playfair Display', serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 25px;
 }
 
 #display-title {
-	text-align: center;
+  text-align: center;
+  font-family: 'Rock Salt', cursive;
+  color: #DE0808;
+  -webkit-font-smoothing: antialiased;
+  font-size: 35px;
+
+}
+
+#beer-display {
+  margin-top: 30px;
+  color: white;
+  background: rgba(0, 0, 0, 0.9);
+  height: 230px;
+  width: 100%;
 }
 
 .glass1 {
@@ -87,9 +99,8 @@ h1 {
 }
 
 .cup{
-
-	opacity: .6;
-	left: 93px;
+	  opacity: .9;
+	  left: 65px;
   	width: 120px;
   	height: 162px;
   	position: absolute;
@@ -214,11 +225,12 @@ h1 {
 }
 
 #sideTab{
-	margin-top: 20px;
+	margin-top: 15px;
+  margin-left: -15px;
 }
 
 #sideTab .tab-pane{
-	height: 524px;
+	height: 529px;
 }
 
 #sideTab .nav-pills > li > a {
@@ -226,10 +238,22 @@ h1 {
 }
 
 #sideTab .tab-content {
-    color : white;
-    background-color: #428bca;
+    
+    background: rgb(236, 137, 8);
     padding : 5px 15px;
 }
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+  background: rgb(199, 129, 24);
+  color: white;
+
+}
+
+a {
+  background: rgb(199, 129, 24);
+  color: white;
+}
+
 
 #pac-input {
 	background-color: #fff;
@@ -247,7 +271,7 @@ h1 {
 }
 
 body {
-	background: #ddd;
+	
 }
 
 .container {
@@ -256,6 +280,13 @@ body {
 
 #austin {
   width: 100%;
+
+  
+}
+
+#austin:hover {
+  -webkit-filter: blur(2px);
+  width: 101%;
   
 }
 
@@ -305,13 +336,17 @@ h1 {
   z-index: 2;
 	background: rgb(236, 137, 8);
 	-webkit-font-smoothing: antialiased;
+  font-family: 'Playfair Display', serif;
 	padding: 30px;
 	margin-top: 60px;
   height: 300px;
-	color: black;
+	color: white;
   width: 40%;
-	
+}
 
+p {
+  font-size: 18px;
+  margin-top: 25px;
 }
 
 #map {
@@ -323,11 +358,18 @@ h1 {
 	
 }
 
+#infoMain{
+	height: 400px;
+	background: #aaa;
+	margin-top: 10px;
+}
+
 #topTenBeer{
-	/*background: rgba(0, 0, 0, 0.7);*/
 	padding: 15px;
 	margin-top: 15px;
-	color: black;
+	color: white;
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
 	display: inline-block;
 	width: 100%;
 }
@@ -335,8 +377,8 @@ h1 {
 #topTenBreweries{
 	padding: 15px;
 	margin-top: 15px;
-	color: black;
-	/*background: rgba(0, 0, 0, 0.7);*/
+	color: white;
+  font-family: 'Playfair Display', serif;
 	display: inline-block;
 	width: 100%;
 
@@ -344,6 +386,18 @@ h1 {
 
 h2 {
 	margin-top: 0px;
+  font-weight: bold;
+  font-family: 'Playfair Display', serif;
+
+}
+
+#topTen {
+  font-size: 35px;
+  font-weight: bold;
+  font-family: 'Playfair Display', serif;
+  -webkit-font-smoothing: antialiased;
+  color: black;
+  text-decoration: underline;
 }
 
 
