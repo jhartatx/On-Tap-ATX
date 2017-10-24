@@ -35,10 +35,36 @@ function loopThroughBeerFacts(beerFacts) {
             setTimeout(function () {
                 $("#factsDisplay").html(beerFacts[i]);
             }, 10000 * i);
-        })(i);
+        }       )(i);
     };
 }
 loopThroughBeerFacts(beerFacts);
+
+
+//query openweathermap API 
+
+var APIKey = "2bbb96eb5c555bde040963058d6373c3";
+
+    // Here we are building the URL we need to query the database
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?" +
+      "q=zip=78701,us&units=imperial&appid=" + APIKey;
+
+    // Here we run our AJAX call to the OpenWeatherMap API
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+      })
+      // We store all of the retrieved data inside of an object called "response"
+      .done(function(response) {
+
+        console.log(response);
+
+        // Transfer content to HTML
+        $(".wind").text("Wind Speed: " + response.wind.speed);
+        $(".humidity").text("Humidity: " + response.main.humidity);
+        $(".temp").text("Temperature (F): " + response.main.temp);
+
+      });
 
 
 var infowindow;
