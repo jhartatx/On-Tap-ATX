@@ -359,7 +359,7 @@ p {
 }
 
 #infoMain{
-	height: 400px;
+	min-height: 400px;
 	background: #aaa;
 	margin-top: 10px;
 }

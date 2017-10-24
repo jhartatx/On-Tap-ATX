@@ -89,6 +89,7 @@ function searchAll(){
 
 function pinBrewers(name){
 	for(i in brewPlaces){
+		console.log(brewPlaces[i].name);
 		if(brewPlaces[i].name.toLowerCase().includes(name)){
 			var id = brewPlaces[i].place_id;
 			var request = {placeId: id};
@@ -97,6 +98,16 @@ function pinBrewers(name){
 			service.getDetails(request, callback);
 			function callback(place, status) {
 				placeObj = place;
+				$("#brewHours").html("");
+				$("#infoTitle").html(placeObj.name);
+				$("#brewRate").html(placeObj.rating + "<hr>");
+				$("#brewAddr").html(placeObj.formatted_address + "<hr>");
+				for(i in placeObj.opening_hours.weekday_text){
+					$("#brewHours").append(placeObj.opening_hours.weekday_text[i] + "<br>");
+				}
+				$("#brewHours").append("<hr>");
+				$("#brewPhone").html(placeObj.formatted_phone_number + "<hr>");
+				$("#brewSite").html(placeObj.website);
 				if (status == google.maps.places.PlacesServiceStatus.OK) {
 				    createMarker(place);
 				}
@@ -147,11 +158,6 @@ $(".breweryLi").click(function(){
 	var name = $(this).text().trim().toLowerCase();
 	console.log(placeObj);
 	pinBrewers(name);
-	setTimeout(function(){ 
-		$("#infoTitle").text(placeObj.name);
-		$("#infoBody").html(placeObj);
-	}, 3000);
-	
 });
 
 
