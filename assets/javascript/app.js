@@ -1,3 +1,35 @@
+var beerFacts = ["At any given time, 0.7% of the world is drunk. So, 50 million people right now are drunk.", 
+ "The strongest beer in the world has a 67.5% alcohol content. (Its called: Snake Venom).", 
+ "Fried beer won Most Creative Fried Food at the 2010 Texas State Fair.", 
+ "A barrel contains 31 Gallons of beer. A keg is actually 15.5 Gallons or a half-barrel.", 
+ "Beer cans were first introduced in 1935.", 
+ "12-ounces of a typical American pale lager has fewer calories than 2 percent milk or apple juice.", 
+ "The United States is the second largest hop producer. (Germany is first).", 
+ "Abraham Lincoln taxed beer to help pay for the Civil War.", 
+ "Shiner Beer made by Spoetzl Brewery is the oldest active brewery in Texas, founded in 1909 in Shiner, TX.", 
+ "The first brewery in Texas was Alamo Brewing Association in San Antonio, founded in 1888.",  
+ "Beer is the oldest and most widely consumed alcoholic drink in the world.",  
+ "Space Barley is the most expensive beer in the world. The barley used to make the beer was kept in the international space station for 5 months! (six pack is $110)", 
+ "Bud Light is the third most consumed beer in the world and the most consumed beer in the USA.", 
+ "New Hampshire consumes the most alcohol in the United States 4.72 Gallons per capita!", 
+ "Homebrewing beer became legal in all 50 states in 2013 - Mississippi was the last state to legalize."];
+
+
+function loopThroughBeerFacts(beerFacts) {
+    for (var i = 0; i < beerFacts.length; i++) {
+
+        (function (i) {
+            setTimeout(function () {
+                $("#factsDisplay").html(beerFacts[i]);
+            }, 10000 * i);
+        })(i);
+    };
+}
+loopThroughBeerFacts(beerFacts);
+
+
+
+
 var infowindow;
 var map;
 
