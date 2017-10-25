@@ -399,7 +399,7 @@ p {
 }
 
 #infoMain{
-	height: 400px;
+	min-height: 400px;
 	background: #aaa;
 	margin-top: 10px;
 }
@@ -440,9 +440,16 @@ h2 {
   text-decoration: underline;
 }
 
+
 #weather-display {
 
 }
 
+
+
+.parallax-window {
+    min-height: 400px;
+    background: transparent;
+}
 
 
