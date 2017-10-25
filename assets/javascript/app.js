@@ -75,6 +75,7 @@ var placeObj;
 
 var service;
 var austin;
+var geocoder;
 
 function initMap() {
 	austin = {lat: 30.2672, lng: -97.7431};
@@ -91,26 +92,41 @@ function initMap() {
 
 	infowindow = new google.maps.InfoWindow();
 	service = new google.maps.places.PlacesService(map);
-
-	searchAll();
 }
 
-function callback(results, status) {
-	if (status === google.maps.places.PlacesServiceStatus.OK) {
-	  for (var i = 0; i < results.length; i++) {
-	    createMarker(results[i]);
-	  }
-	}
-}
 
-function searchAll(){
-	var request = {
-	    location: austin,
-	    radius: '150000',
-	    keyword: "brewery"
-	};
+function searchAll(zip){
+	clearMarkers();
+	var lat = '';
+    var lng = '';
+    var address = zip;
+    geocoder = new google.maps.Geocoder();
+    geocoder.geocode( { 'address': address}, callback);
+    function callback(results, status) {
+      	if (status == google.maps.GeocoderStatus.OK) {
+        	lat = results[0].geometry.location.lat();
+        	lng = results[0].geometry.location.lng();
+        	console.log('Latitude: ' + lat + ' Logitude: ' + lng);
 
-	service.nearbySearch(request, callback);
+			var request = {
+			    location: {"lat": lat, "lng": lng},
+			    radius: '150000',
+			    keyword: "brewery"
+			};
+
+			service.nearbySearch(request, callback);
+			function callback(results, status) {
+				if (status === google.maps.places.PlacesServiceStatus.OK) {
+					for (var i = 0; i < results.length; i++) {
+				    	createMarker(results[i]);
+					}
+				}
+			}
+
+      	} else {
+        	console.log("Geocode was not successful for the following reason: " + status);
+      	}
+    }
 }
 
 function pinBrewers(name){
@@ -158,6 +174,12 @@ function createMarker(place) {
 	});
 
 	markers.push(marker);
+	var bounds = new google.maps.LatLngBounds();
+	for (var i = 0; i < markers.length; i++) {
+		bounds.extend(markers[i].getPosition());
+	}
+
+	map.fitBounds(bounds);
 }
 
 function clearMarkers(){
@@ -168,22 +190,25 @@ function clearMarkers(){
 }
 
 
+$( document ).ready(function(){
+	$("#brewTab").click(function(){
+		clearMarkers();
+		for(i in brewPlaces){
+			createMarker(brewPlaces[i]);
+		}
+	});
 
-$("#brewTab").click(function(){
-	clearMarkers();
-	for(i in brewPlaces){
-		createMarker(brewPlaces[i]);
-	}
-});
+	$("#submit").click(function(event){
+		event.preventDefault();
+		var zipc = $("#zip").val().trim();
+		searchAll(zipc);
+	})
 
-$("#allTab").click(function(){
-	searchAll();
-})
-
-$(".breweryLi").click(function(){
-	var name = $(this).text().trim().toLowerCase();
-	console.log(placeObj);
-	pinBrewers(name);
+	$(".breweryLi").click(function(){
+		var name = $(this).text().trim().toLowerCase();
+		console.log(placeObj);
+		pinBrewers(name);
+	});
 });
 
 
