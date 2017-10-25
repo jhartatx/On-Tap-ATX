@@ -266,3 +266,4 @@ connectionsRef.on("value", function(snap) {
 
 });
 
+$('.parallax-window').parallax({imageSrc: 'assets/images/skyline2.jpg'});
