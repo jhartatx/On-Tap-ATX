@@ -1,3 +1,4 @@
+//google places api return for our top 10 breweries
 var brewPlaces = [
 {"geometry":{"location":{"lat":30.2209082,"lng":-97.66106919999999},"viewport":{"south":30.2193703697085,"west":-97.66265768029155,"north":30.2220683302915,"east":-97.65995971970852}},"icon":"https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png","id":"556c99866bb50706d8af09d7343b96202d84f808","name":"Live Oak Brewing Company","opening_hours":{"open_now":true,"weekday_text":[]},"photos":[{"height":3088,"html_attributions":["<a href=\"https://maps.google.com/maps/contrib/108073720471808871988/photos\">Michael Villere</a>"],"width":4160}],"place_id":"ChIJw3GMxCy0RIYRoX1rWtORKkQ","price_level":2,"rating":4.6,"reference":"CmRRAAAAvtb9H0BZtiyXEOuKWP7Co593Q8vDkVpIp8_JUZxpXVdHELW0w4VaffAs12ZQbT79hbocARfKXRefRUu2kKO7Y_U6ZvlhmfO3aB2bFXR2bgx6JAQ1dPvG9s3e0r2a6JVHEhD4F1MqBDk-7NMTZyslolPFGhRuRi_zA8tKS8dFNpieHEri6YQaew","scope":"GOOGLE","types":["food","point_of_interest","establishment"],"vicinity":"1615 Crozier Lane, Del Valle","html_attributions":[]},
 {"geometry":{"location":{"lat":30.11326779999999,"lng":-98.41281830000003},"viewport":{"south":30.11181861970849,"west":-98.41415728029153,"north":30.11451658029149,"east":-98.41145931970851}},"icon":"https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png","id":"564c3ce9f5e4b7036ff50e2a9c19b15b35bcd682","name":"Real Ale Brewing Company","opening_hours":{"open_now":false,"weekday_text":[]},"photos":[{"height":3024,"html_attributions":["<a href=\"https://maps.google.com/maps/contrib/100975007382570589407/photos\">Mark Caraway</a>"],"width":4032}],"place_id":"ChIJNf9MCCR3W4YRrS_YlP4rzY4","rating":4.7,"reference":"CmRSAAAAPzSpZA3hfwow4ZZbMU2a8aCnquX99msAn2LGgl8dDAZ2Y1thlVS3eF8awRMO1yFlZZS1zhdcNDOUBmO8w9Cy_V3QGAB9GV3w9A3fhQwgHaO-R0cHLmvI7p1pY3P4RmHFEhCE8e8l9Gziudz7B2CzYkbhGhRVVHkEHmhQLTEeFXPwtOmX3lJTZQ","scope":"GOOGLE","types":["bar","food","point_of_interest","establishment"],"vicinity":"231 San Saba Court, Blanco","html_attributions":[]},
@@ -67,16 +68,24 @@ var APIKey = "2bbb96eb5c555bde040963058d6373c3";
       });
 
 
-var infowindow;
+//global init of map and markers for holding google api objects
+
 var map;
 var markers = [];
+var places = [];
 
+//holder for google places api return
 var placeObj;
 
+//more global variables for maps and google services
 var service;
 var austin;
 var geocoder;
 
+var redCon = "./assets/images/red-dot.png";
+var greenCon = "./assets/images/green-dot.png";
+
+//initialize map with no pins, center map on austin to start
 function initMap() {
 	austin = {lat: 30.2672, lng: -97.7431};
 	map = new google.maps.Map(document.getElementById('map'), {
@@ -90,7 +99,6 @@ function initMap() {
         }
     });
 
-	infowindow = new google.maps.InfoWindow();
 	service = new google.maps.places.PlacesService(map);
 }
 
@@ -106,7 +114,6 @@ function searchAll(zip){
       	if (status == google.maps.GeocoderStatus.OK) {
         	lat = results[0].geometry.location.lat();
         	lng = results[0].geometry.location.lng();
-        	console.log('Latitude: ' + lat + ' Logitude: ' + lng);
 
 			var request = {
 			    location: {"lat": lat, "lng": lng},
@@ -114,12 +121,16 @@ function searchAll(zip){
 			    keyword: "brewery"
 			};
 
+			places = [];
+
 			service.nearbySearch(request, callback);
 			function callback(results, status) {
 				if (status === google.maps.places.PlacesServiceStatus.OK) {
 					for (var i = 0; i < results.length; i++) {
+						places.push(results[i]);
 				    	createMarker(results[i]);
 					}
+					initLists(places, "#searchList");
 				}
 			}
 
@@ -130,33 +141,54 @@ function searchAll(zip){
 }
 
 function pinBrewers(name){
-	for(i in brewPlaces){
-		console.log(brewPlaces[i].name);
-		if(brewPlaces[i].name.toLowerCase().includes(name)){
-			var id = brewPlaces[i].place_id;
-			var request = {placeId: id};
-			var service = new google.maps.places.PlacesService(map);
+	var id = name;
+	//console.log(markers);
+	
+	var request = {placeId: id};
+	var service = new google.maps.places.PlacesService(map);
 
-			service.getDetails(request, callback);
-			function callback(place, status) {
-				placeObj = place;
-				$("#brewHours").html("");
-				$("#infoTitle").html(placeObj.name);
-				$("#brewRate").html(placeObj.rating + "<hr>");
+	for(i in markers){
+		if(markers[i].get("id") === id){
+			highlightMark(markers[i]);
+		}
+	}
+	
+
+	service.getDetails(request, callback);
+	function callback(place, status) {
+		if (status == google.maps.places.PlacesServiceStatus.OK) {
+			placeObj = place;
+
+			//console.log(placeObj);
+			$("#brewHours").html("");
+
+			$("#infoTitle").html(placeObj.name);
+
+			if(placeObj.rating){
+				$("#brewRate").html(placeObj.rating + "<hr>");	
+			}
+
+			if(placeObj.formatted_address){
 				$("#brewAddr").html(placeObj.formatted_address + "<hr>");
+			}
+
+			if(placeObj.opening_hours){
 				for(i in placeObj.opening_hours.weekday_text){
 					$("#brewHours").append(placeObj.opening_hours.weekday_text[i] + "<br>");
 				}
 				$("#brewHours").append("<hr>");
-				$("#brewPhone").html(placeObj.formatted_phone_number + "<hr>");
-				$("#brewSite").html(placeObj.website);
-				if (status == google.maps.places.PlacesServiceStatus.OK) {
-				    createMarker(place);
-				}
-				else{
-					console.log(status);
-				}
 			}
+
+			if(placeObj.formatted_phone_number){
+				$("#brewPhone").html(placeObj.formatted_phone_number + "<hr>");
+			}
+
+			if(placeObj.website){
+				$("#brewSite").html(placeObj.website);
+			}
+		}
+		else{
+			console.log(status);
 		}
 	}
 }
@@ -164,13 +196,20 @@ function pinBrewers(name){
 function createMarker(place) {
 	var placeLoc = place.geometry.location;
 	var marker = new google.maps.Marker({
-	  map: map,
-	  position: place.geometry.location
+		icon: {
+			url: redCon,
+			scaledSize: new google.maps.Size(32,32)
+		},
+	    map: map,
+	    position: place.geometry.location
 	});
 
+	marker.set("id", place.place_id);
+
 	google.maps.event.addListener(marker, 'click', function() {
-	  infowindow.setContent(place.name);
-	  infowindow.open(map, this);
+		var but = marker.get("id");
+		pinBrewers(but);
+		highlightMark(marker);
 	});
 
 	markers.push(marker);
@@ -182,6 +221,25 @@ function createMarker(place) {
 	map.fitBounds(bounds);
 }
 
+function highlightMark(marker){
+	resetMarkers();
+	marker.setZIndex(1000);
+	marker.setIcon({
+		url: greenCon,
+		scaledSize: new google.maps.Size(36,36)
+	});
+}
+
+function resetMarkers(){
+	for(i in markers){
+		markers[i].setZIndex(10);
+		markers[i].setIcon({
+			url: redCon,
+			scaledSize: new google.maps.Size(32,32)
+		});
+	}
+}
+
 function clearMarkers(){
 	markers.forEach(function(marker) {
 		marker.setMap(null);
@@ -189,8 +247,28 @@ function clearMarkers(){
 	markers = [];
 }
 
+function initLists(list, div){
+	for(i in list){
+		var li = $("<li />");
+		var btn = $("<input/>", {
+			type: "button",
+			class: "btn breweryLi",
+			id: list[i].place_id,
+			value: list[i].name,
+			on: {
+				click: function(){ 
+					pinBrewers($(this)[0].id);
+				}
+			}
+		});
+		$(div).append(li.html(btn));
+	}
+}
+
 
 $( document ).ready(function(){
+	initLists(brewPlaces, "#breweries");
+
 	$("#brewTab").click(function(){
 		clearMarkers();
 		for(i in brewPlaces){
@@ -203,12 +281,6 @@ $( document ).ready(function(){
 		var zipc = $("#zip").val().trim();
 		searchAll(zipc);
 	})
-
-	$(".breweryLi").click(function(){
-		var name = $(this).text().trim().toLowerCase();
-		console.log(placeObj);
-		pinBrewers(name);
-	});
 });
 
 

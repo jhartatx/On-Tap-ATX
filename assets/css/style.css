@@ -441,6 +441,10 @@ h2 {
   text-decoration: underline;
 }
 
+.breweryLi{
+	margin: 5px;
+}
+
 
 #weather-display {
 
