@@ -1,48 +1,5 @@
-/*change text color animation
-
-/*@keyframes example {
-    0%   {color:red; left:0px; top:0px;}
-    25%  {color:yellow; left:200px; top:0px;}
-    50%  {color:blue; left:200px; top:200px;}
-    75%  {color:green; left:0px; top:200px;}
-    100% {color:red; left:0px; top:0px;}
-}
-
-h1 {
-    width: 100px;
-    height: 100px;
-    animation-name: example;
-    animation-duration: 370s;
-    animation-iteration-count: infinite;
-}*/
-
-/* slide in animation
-
-/*p {
-  animation-duration: 2s;
-  animation-name: slidein;
-}
-
-@keyframes slidein {
-  from {
-    margin-left: 100%;
-    width: 300%; 
-  }
-
-  to {
-    margin-left: 0%;
-    width: 100%;
-  }
-
-  60% {
-  font-size: 200%;
-  margin-left: 25%;
-  width: 150%;
-}
-
-}*/
-
 #weather-display {
+	margin-bottom: 15px;
 	margin-top: 15px;
 	background: rgb(236, 137, 8);
 	width: 85%;
@@ -54,10 +11,9 @@ h1 {
   	font-size: 22px;
 }
 
-
-
 #viewers {
 	margin-top: 15px;
+	margin-bottom: 15px;
 	background: rgb(236, 137, 8);
 	width: 100%;
 	color: white;
@@ -69,23 +25,14 @@ h1 {
 	height: 157px;
 }
 
-
-
-h4 {
-	font-family: 'Playfair Display', serif;
-  	-webkit-font-smoothing: antialiased;
-	font-weight: bold;
-	font-size: 22px;
-
-}
-
 #factsDisplay {
   color: white;
   margin-top: 3%;
-  margin-left: 25%;
+  margin-left: 30%;
+	margin-right: 15%;
   font-family: 'Playfair Display', serif;
   -webkit-font-smoothing: antialiased;
-  font-size: 25px;
+  font-size: 173%;
 }
 
 #display-title {
@@ -98,7 +45,7 @@ h4 {
 }
 
 #beer-display {
-  margin-top: 30px;
+  margin-top: 15px;
   color: white;
   background: rgba(0, 0, 0, 0.9);
   height: 230px;
@@ -153,7 +100,7 @@ h4 {
 	top: 30px;
 	border-radius: 25px;
 	border:15px solid #fff;
- 
+
 }
 
 .beer{
@@ -181,7 +128,7 @@ h4 {
 	right: -4px;
 }
 
-.bubble_circle{  
+.bubble_circle{
 	position: absolute;
 	border-radius: 50%;
 }
@@ -252,7 +199,7 @@ h4 {
     width: 5px;
     height: 5px;
   }
-  
+
   to{
     bottom: 130px;
     opacity: .9;
@@ -275,7 +222,7 @@ h4 {
 }
 
 #sideTab .tab-content {
-    
+
     background: rgb(236, 137, 8);
     padding : 5px 15px;
 }
@@ -283,8 +230,11 @@ h4 {
 .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
   background: rgb(199, 129, 24);
   color: white;
+}
 
-
+#submit {
+	background: white;
+	color: black;
 }
 
 a {
@@ -312,7 +262,7 @@ a {
 }
 
 body {
-	
+
 }
 
 .container {
@@ -321,14 +271,14 @@ body {
 
 #austin {
   width: 100%;
+	height: 250px;
 
-  
 }
 
 #austin:hover {
   -webkit-filter: blur(2px);
-  width: 101%;
-  
+
+
 }
 
 #tap-display {
@@ -336,31 +286,20 @@ body {
   z-index: -1;
   position: relative;
   margin-left: 30%;
-	
+
 }
 
 #tap {
   margin-right: 30px;
   width: 100%;
   z-index: -1;
-  
-}
 
-
-h1 {
-	color: black;
-	-webkit-font-smoothing: antialiased;
-	font-size: 50px;
-	font-family: 'Playfair Display', serif;
-	margin-top: 0px;
-	width: 100%;
 }
 
 #heading {
 	width: 100%;
 	height: 150px;
 	padding: 10px;
-	
 }
 
 .sub-text {
@@ -372,21 +311,22 @@ h1 {
 }
 
 #intro {
+	border-radius: 20px;
   position: absolute;
   float: left;
   z-index: 2;
 	background: rgb(236, 137, 8);
 	-webkit-font-smoothing: antialiased;
   font-family: 'Playfair Display', serif;
-	padding: 30px;
-	margin-top: 60px;
-  height: 300px;
+	padding: 2%;
+	margin-top: 8%;
+  height: 65%;
 	color: white;
   width: 40%;
 }
 
 p {
-  font-size: 18px;
+  font-size: 125%;
   margin-top: 25px;
 }
 
@@ -396,7 +336,7 @@ p {
 	display: inline-block;
 	height: 580px;
 	width: 100%;
-	
+
 }
 
 #infoMain{
@@ -410,7 +350,7 @@ p {
 	margin-top: 15px;
 	color: white;
   font-family: 'Playfair Display', serif;
-  font-size: 16px;
+  font-size: 109%;
 	display: inline-block;
 	width: 100%;
 }
@@ -422,14 +362,33 @@ p {
   font-family: 'Playfair Display', serif;
 	display: inline-block;
 	width: 100%;
+}
 
+h1 {
+	color: black;
+	-webkit-font-smoothing: antialiased;
+	font-size: 50px;
+	font-family: 'Playfair Display', serif;
+	margin-top: 0px;
+	width: 100%;
 }
 
 h2 {
 	margin-top: 0px;
   font-weight: bold;
   font-family: 'Playfair Display', serif;
+	font-size: 185%;
+}
 
+h3 {
+	margin-top: 0px;
+}
+
+h4 {
+	font-family: 'Playfair Display', serif;
+  	-webkit-font-smoothing: antialiased;
+	font-weight: bold;
+	font-size: 22px;
 }
 
 #topTen {
@@ -443,18 +402,30 @@ h2 {
 
 .breweryLi{
 	margin: 5px;
+	background-color: white;
+	color: black;
 }
 
-
-#weather-display {
-
+.btn {
+	width: 100%;
 }
 
+#infoMain {
+	padding: 20px;
+	background: rgb(236, 137, 8);
+	color: white;
+	-webkit-font-smoothing: antialiased;
+  font-family: 'Playfair Display', serif;
+	font-size: 18px;
+}
 
+#infoTitle {
+	font-weight: bold;
+	Font-size: 25px;
+}
 
 .parallax-window {
-    min-height: 400px;
+    min-height: 325px;
+		width: 100%;
     background: transparent;
 }
-
-

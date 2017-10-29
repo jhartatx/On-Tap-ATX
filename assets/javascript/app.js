@@ -12,20 +12,20 @@ var brewPlaces = [
 {"geometry":{"location":{"lat":30.2229723,"lng":-97.77015189999997},"viewport":{"south":30.2219821697085,"west":-97.77125628029148,"north":30.2246801302915,"east":-97.76855831970852}},"icon":"https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png","id":"8d8eaf593b0f2aadeaec2f385c8175fcc2c6b4e2","name":"(512) Brewing Company","opening_hours":{"open_now":false,"weekday_text":[]},"photos":[{"height":2368,"html_attributions":["<a href=\"https://maps.google.com/maps/contrib/107629499345169497431/photos\">Joseph Schaffer</a>"],"width":3200}],"place_id":"ChIJ236XXrm0RIYRHL-NPzrdEmw","rating":4.6,"reference":"CmRRAAAABdv_WzpVlO0JoLnz2OMZRwWco8VcibBbeDpJ3qtDA7Zr-7zlFwZPK8nfe9MxEDoZ6BlTuKSXw841n736KlToe0cy2fVFyf_W8Vo0rT6HeK_wNG8ne2R3eGlMrUlSCZ-_EhAbyXI9QcfS1GNooPeM6mTkGhSIPNXaPoB2yAfnjcDDlTmueE947Q","scope":"GOOGLE","types":["food","point_of_interest","establishment"],"vicinity":"407 Radam Lane, Austin","html_attributions":[]}
 ];
 
-var beerFacts = ["At any given time, 0.7% of the world is drunk. So, 50 million people right now are drunk.", 
- "The strongest beer in the world has a 67.5% alcohol content. (Its called: Snake Venom).", 
- "Fried beer won Most Creative Fried Food at the 2010 Texas State Fair.", 
- "A barrel contains 31 Gallons of beer. A keg is actually 15.5 Gallons or a half-barrel.", 
- "Beer cans were first introduced in 1935.", 
- "12-ounces of a typical American pale lager has fewer calories than 2 percent milk or apple juice.", 
- "The United States is the second largest hop producer. (Germany is first).", 
- "Abraham Lincoln taxed beer to help pay for the Civil War.", 
- "Shiner Beer made by Spoetzl Brewery is the oldest active brewery in Texas, founded in 1909 in Shiner, TX.", 
- "The first brewery in Texas was Alamo Brewing Association in San Antonio, founded in 1888.",  
- "Beer is the oldest and most widely consumed alcoholic drink in the world.",  
- "Space Barley is the most expensive beer in the world. The barley used to make the beer was kept in the international space station for 5 months! (six pack is $110)", 
- "Bud Light is the third most consumed beer in the world and the most consumed beer in the USA.", 
- "New Hampshire consumes the most alcohol in the United States 4.72 Gallons per capita!", 
+var beerFacts = ["At any given time, 0.7% of the world is drunk. So, 50 million people right now are drunk.",
+ "The strongest beer in the world has a 67.5% alcohol content. (Its called: Snake Venom).",
+ "Fried beer won Most Creative Fried Food at the 2010 Texas State Fair.",
+ "A barrel contains 31 Gallons of beer. A keg is actually 15.5 Gallons or a half-barrel.",
+ "Beer cans were first introduced in 1935.",
+ "12-ounces of a typical American pale lager has fewer calories than 2 percent milk or apple juice.",
+ "The United States is the second largest hop producer. (Germany is first).",
+ "Abraham Lincoln taxed beer to help pay for the Civil War.",
+ "Shiner Beer made by Spoetzl Brewery is the oldest active brewery in Texas, founded in 1909 in Shiner, TX.",
+ "The first brewery in Texas was Alamo Brewing Association in San Antonio, founded in 1888.",
+ "Beer is the oldest and most widely consumed alcoholic drink in the world.",
+ "Space Barley is the most expensive beer in the world. The barley used to make the beer was kept in the international space station for 5 months! (six pack is $110)",
+ "Bud Light is the third most consumed beer in the world and the most consumed beer in the USA.",
+ "New Hampshire consumes the most alcohol in the United States 4.72 Gallons per capita!",
  "Homebrewing beer became legal in all 50 states in 2013 - Mississippi was the last state to legalize."];
 
 
@@ -42,7 +42,7 @@ function loopThroughBeerFacts(beerFacts) {
 loopThroughBeerFacts(beerFacts);
 
 
-//query openweathermap API 
+//query openweathermap API
 
 var APIKey = "2bbb96eb5c555bde040963058d6373c3";
 
@@ -143,7 +143,7 @@ function searchAll(zip){
 function pinBrewers(name){
 	var id = name;
 	//console.log(markers);
-	
+
 	var request = {placeId: id};
 	var service = new google.maps.places.PlacesService(map);
 
@@ -152,7 +152,7 @@ function pinBrewers(name){
 			highlightMark(markers[i]);
 		}
 	}
-	
+
 
 	service.getDetails(request, callback);
 	function callback(place, status) {
@@ -165,11 +165,11 @@ function pinBrewers(name){
 			$("#infoTitle").html(placeObj.name);
 
 			if(placeObj.rating){
-				$("#brewRate").html(placeObj.rating + "<hr>");	
+				$("#brewRate").html("Overall Rating: " + placeObj.rating + "<hr>");
 			}
 
 			if(placeObj.formatted_address){
-				$("#brewAddr").html(placeObj.formatted_address + "<hr>");
+				$("#brewAddr").html("Address: " + "<br>" + placeObj.formatted_address + "<hr>");
 			}
 
 			if(placeObj.opening_hours){
@@ -180,11 +180,11 @@ function pinBrewers(name){
 			}
 
 			if(placeObj.formatted_phone_number){
-				$("#brewPhone").html(placeObj.formatted_phone_number + "<hr>");
+				$("#brewPhone").html("Phone Number: " + placeObj.formatted_phone_number + "<hr>");
 			}
 
 			if(placeObj.website){
-				$("#brewSite").html(placeObj.website);
+				$("#brewSite").html("Website: " + "<br>" + placeObj.website);
 			}
 		}
 		else{
@@ -256,7 +256,7 @@ function initLists(list, div){
 			id: list[i].place_id,
 			value: list[i].name,
 			on: {
-				click: function(){ 
+				click: function(){
 					pinBrewers($(this)[0].id);
 				}
 			}
