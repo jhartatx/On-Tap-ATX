@@ -364,6 +364,12 @@ p {
 	width: 100%;
 }
 
+#searchList{
+	overflow: scroll;
+	width: 370px;
+	height: 420px;
+}
+
 h1 {
 	color: black;
 	-webkit-font-smoothing: antialiased;

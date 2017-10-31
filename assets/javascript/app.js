@@ -1,4 +1,105 @@
 //google places api return for our top 10 breweries
+var brews = [
+ {"geometry": {
+        "location": {
+            "lat":30.2209082,
+            "lng":-97.66106919999999
+        }
+    },
+	"name": "HefeWeizen", 
+	"place_id":"ChIJw3GMxCy0RIYRoX1rWtORKkQ",
+  }, 
+
+   {"geometry": {
+        "location": {
+            "lat":30.11326779999999,
+            "lng":-98.41281830000003
+        }
+    },
+	"name": "Firemans Four", 
+	"place_id":"ChIJNf9MCCR3W4YRrS_YlP4rzY4",
+  }, 
+  {"geometry": {
+        "location": {
+            "lat":30.3795751,
+            "lng":-97.72984810000003
+        }
+    },
+	"name": "Fire Eagle IPA", 
+	"place_id":"ChIJnVSeApDLRIYR2xlVAQPxhlQ",
+  }, 
+ 
+{"geometry": {
+        "location": {
+            "lat":30.2306807,
+            "lng":-97.9992469
+        }
+    },
+	"name": "Black Metal Imperial Stout", 
+	"place_id":"ChIJkexlLlRGW4YRCXbXqNo7G_8",
+  }, 
+  {"geometry": {
+        "location": {
+           "lat":30.25844810000001,
+           "lng":-97.71188510000002
+        }
+    },
+	"name": "The One They Call Zoe Lager", 
+	"place_id":"ChIJTzFOTcy1RIYRPd-9rbG7uH4",
+  }, 
+
+ {"geometry": {
+        "location": {
+           "lat":30.2111852,
+           "lng":-97.73607379999999
+        }
+    },
+	"name": "Convict Hill Oatmeal Stout", 
+	"place_id":"ChIJr_5rVnm0RIYRZ4remai1ztE",
+  }, 
+
+   {"geometry": {
+        "location": {
+           "lat":30.2229723,
+           "lng":-97.77015189999997
+        }
+    },
+	"name": "Pecan Porter", 
+	"place_id":"ChIJ236XXrm0RIYRHL-NPzrdEmw",
+  }, 
+
+{"geometry": {
+        "location": {
+           "lat":30.40546,
+           "lng":-97.87413300000003
+        }
+    },
+	"name": "Meta Modern Session IPA", 
+	"place_id":"ChIJMbXMdmAxW4YRcBYizYsMcAw",
+  }, 
+
+
+{"geometry": {
+        "location": {
+           "lat":30.2247173,
+           "lng":-97.9530823
+        }
+    },
+	"name": "Thristy Goat Amber", 
+	"place_id":"ChIJayB1n5tIW4YR7q_YExbO_QY",
+  }, 
+
+  {"geometry": {
+        "location": {
+          "lat":30.3825245,
+          "lng":-97.7198803
+        }
+    },
+	"name": "Triple B", 
+	"place_id":"ChIJZeyxLY3LRIYRKseIgfEgTRc",
+  }
+];
+
 var brewPlaces = [
 {"geometry":{"location":{"lat":30.2209082,"lng":-97.66106919999999},"viewport":{"south":30.2193703697085,"west":-97.66265768029155,"north":30.2220683302915,"east":-97.65995971970852}},"icon":"https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png","id":"556c99866bb50706d8af09d7343b96202d84f808","name":"Live Oak Brewing Company","opening_hours":{"open_now":true,"weekday_text":[]},"photos":[{"height":3088,"html_attributions":["<a href=\"https://maps.google.com/maps/contrib/108073720471808871988/photos\">Michael Villere</a>"],"width":4160}],"place_id":"ChIJw3GMxCy0RIYRoX1rWtORKkQ","price_level":2,"rating":4.6,"reference":"CmRRAAAAvtb9H0BZtiyXEOuKWP7Co593Q8vDkVpIp8_JUZxpXVdHELW0w4VaffAs12ZQbT79hbocARfKXRefRUu2kKO7Y_U6ZvlhmfO3aB2bFXR2bgx6JAQ1dPvG9s3e0r2a6JVHEhD4F1MqBDk-7NMTZyslolPFGhRuRi_zA8tKS8dFNpieHEri6YQaew","scope":"GOOGLE","types":["food","point_of_interest","establishment"],"vicinity":"1615 Crozier Lane, Del Valle","html_attributions":[]},
 {"geometry":{"location":{"lat":30.11326779999999,"lng":-98.41281830000003},"viewport":{"south":30.11181861970849,"west":-98.41415728029153,"north":30.11451658029149,"east":-98.41145931970851}},"icon":"https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png","id":"564c3ce9f5e4b7036ff50e2a9c19b15b35bcd682","name":"Real Ale Brewing Company","opening_hours":{"open_now":false,"weekday_text":[]},"photos":[{"height":3024,"html_attributions":["<a href=\"https://maps.google.com/maps/contrib/100975007382570589407/photos\">Mark Caraway</a>"],"width":4032}],"place_id":"ChIJNf9MCCR3W4YRrS_YlP4rzY4","rating":4.7,"reference":"CmRSAAAAPzSpZA3hfwow4ZZbMU2a8aCnquX99msAn2LGgl8dDAZ2Y1thlVS3eF8awRMO1yFlZZS1zhdcNDOUBmO8w9Cy_V3QGAB9GV3w9A3fhQwgHaO-R0cHLmvI7p1pY3P4RmHFEhCE8e8l9Gziudz7B2CzYkbhGhRVVHkEHmhQLTEeFXPwtOmX3lJTZQ","scope":"GOOGLE","types":["bar","food","point_of_interest","establishment"],"vicinity":"231 San Saba Court, Blanco","html_attributions":[]},
@@ -268,6 +369,7 @@ function initLists(list, div){
 
 $( document ).ready(function(){
 	initLists(brewPlaces, "#breweries");
+	initLists(brews, "#beerL");
 
 	$("#brewTab").click(function(){
 		clearMarkers();
