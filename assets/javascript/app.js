@@ -371,6 +371,15 @@ $( document ).ready(function(){
 	initLists(brewPlaces, "#breweries");
 	initLists(brews, "#beerL");
 
+	$("#beerTab").click(function(){
+		clearMarkers();
+		for(i in brews){
+			createMarker(brews[i]);
+		}
+	});
+
+	$("#beerTab").click();
+
 	$("#brewTab").click(function(){
 		clearMarkers();
 		for(i in brewPlaces){
