@@ -211,6 +211,7 @@
 
 #sideTab{
 	margin-top: 15px;
+	padding-right: 0;
   margin-left: -15px;
 }
 
@@ -225,7 +226,7 @@
 #sideTab .tab-content {
 
     background: rgb(236, 137, 8);
-    padding : 5px 15px;
+    padding : 5px 10px;
 }
 
 .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
@@ -325,6 +326,7 @@ body {
   height: 65%;
 	color: white;
   width: 40%;
+  overflow: scroll;
 }
 
 p {
@@ -348,8 +350,8 @@ p {
 }
 
 #topTenBeer{
-	padding: 15px;
-	margin-top: 15px;
+	padding: 5px;
+	margin-top: 5px;
 	color: white;
   font-family: 'Playfair Display', serif;
   font-size: 109%;
@@ -358,8 +360,8 @@ p {
 }
 
 #topTenBreweries{
-	padding: 15px;
-	margin-top: 15px;
+	padding: 5px;
+	margin-top: 5px;
 	color: white;
   font-family: 'Playfair Display', serif;
 	display: inline-block;
@@ -404,7 +406,7 @@ h4 {
 }
 
 #topTen {
-  font-size: 35px;
+  font-size: 32px;
   font-weight: bold;
   font-family: 'Playfair Display', serif;
   -webkit-font-smoothing: antialiased;
@@ -464,4 +466,8 @@ footer {
 
 #connected-viewers {
 	margin-top: 50px;
+}
+
+#sidePanel{
+	padding-right: 0;
 }
