@@ -388,6 +388,7 @@ $( document ).ready(function(){
 
 	$("#submit").click(function(event){
 		event.preventDefault();
+		$("#searchList").html("");
 		var zipc = $("#zip").val().trim();
 		searchAll(zipc);
 	})

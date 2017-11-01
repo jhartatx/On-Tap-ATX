@@ -326,7 +326,7 @@ body {
   height: 65%;
 	color: white;
   width: 40%;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 p {
@@ -468,6 +468,3 @@ footer {
 	margin-top: 50px;
 }
 
-#sidePanel{
-	padding-right: 0;
-}
